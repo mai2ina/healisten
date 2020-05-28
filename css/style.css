@@ -1,0 +1,164 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
+
+/* common style start */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(45deg,
+        rgba(222, 102, 65, 0.6) 15%,
+        rgba(232, 172, 81, 0.6) 28%,
+        rgba(242, 229, 92, 0.6) 42%,
+        rgba(57, 168, 105, 0.6) 56%,
+        rgba(71, 132, 191, 0.6) 70%,
+        rgba(93, 80,153, 0.6) 84%,
+        rgba(165, 91, 154, 0.6) 100%
+    );
+    background-size: 700% 700%; /* 一色だけ画面に表示するように */
+    background-position: 0% 50%;
+    animation: gradientBackgroundColor 40000ms ease infinite;
+    font-family: 'Dancing Script', cursive, serif;
+}
+/* common style end */
+
+/* app style start */
+.app {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+/* app style end */
+
+/* header style start */
+.header-container {
+    height: 25vh;
+}
+
+.logo-area {
+    padding: 1em;
+}
+
+.logo-area h1 {
+    margin: 0;
+    color: #7058a3;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #ffffff,
+                 -1px 1px 0 #ffffff, 1px -1px 0 #ffffff,
+                 0px 1px 0 #ffffff,  0 -1px 0 #ffffff,
+                 -1px 0 0 #ffffff, 1px 0 0 #ffffff;
+}
+/* header style end */
+
+/* main style start */
+.audio-container {
+    width: 100%;
+    margin: 0;
+    height: 75vh;
+}
+
+.controller-area {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 75vh;
+    margin: 0 auto;
+}
+
+.pulse-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    line-height: 30%;
+    border-radius: 50%;
+    background: #ffffff;
+    transform: translate(-50%, -80%);
+    animation: none;
+}
+
+.pulse-box.active {
+    animation: pulsationBoxShadow 3000ms linear infinite;
+}
+
+.timer-box {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.play,
+.stop {
+    fill: rgba(0, 0, 0, 0.8);
+    stroke: #ffffff;
+    stroke-width: 2px;
+}
+
+.play:hover,
+.stop:hover {
+    cursor: pointer;
+}
+
+.stop {
+    display: none;
+}
+
+.timer-display {
+    font-family: serif;
+}
+/* main style end */
+
+/* keyframes for background gradation animation start */
+@keyframes gradientBackgroundColor {
+    /* 0%:オレンジ色から 50%:紫に色向かって background-position を変更 */
+    from { background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    /* 100%:50% 時点の紫色から、再びオレンジ色に戻る動き */
+    to { background-position:0% 50%; }
+}
+/* keyframes for background gradation animation end */
+
+/* keyframes for playing pulsation start */
+@keyframes pulsationBoxShadow {
+    0% {
+        box-shadow: 0 0 .65rem 0 rgba(162,32,65,0.3);
+    }
+    25% {
+        box-shadow: 0 0 .65rem 1.95rem rgba(255, 158, 206, .8);
+    }
+    50% {
+        box-shadow: 0 0 1.95rem 3.9rem rgba(255, 158, 206, .5);
+    }
+    75% {
+        box-shadow: 0 0 1.95rem 1.95rem rgba(255, 158, 206, .2);
+        }
+    100% {
+        box-shadow: 0 0 .65rem 0 rgba(255, 255, 255, 1);
+    }
+}
+/* keyframes for playing pulsation end */
+
+/* sp style start */
+@media (max-width: 959px) {
+    .header-container {
+        height: 10vh;
+    }
+
+    .audio-container {
+        height: 90vh;
+    }
+}
+/* sp style end */

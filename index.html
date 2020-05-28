@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Healisten</title>
+    </head>
+
+    <body>
+        <div class="app">
+            <div class="header-container">
+                <div class="logo-area">
+                    <h1>Healisten</h1>
+                </div>
+            </div>
+
+            <div class="audio-container">
+                <audio class="sound" src="sounds/ocean.mp3"></audio>
+                <div class="controller-area">
+                    <div class="pulse-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" class="play">
+                            <g id="layer-1" data-name="layer-1">
+                                <g id="play-icon">
+                                    <path d="M250,0C111.93,0,0,111.93,0,250S111.93,500,250,500,500,388.07,500,250,388.07,0,250,0ZM405.92,262.62,184.08,392.38c-11.87,6.94-21.58,1.37-21.58-12.38V120c0-13.75,9.71-19.32,21.58-12.38L405.92,237.38C417.79,244.32,417.79,255.68,405.92,262.62Z"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" class="stop">
+                            <g id="layer-2" data-name="layer-2">
+                                <g id="stop-icon">
+                                    <path d="M250,0C111.93,0,0,111.93,0,250S111.93,500,250,500,500,388.07,500,250,388.07,0,250,0ZM200,386.77c0,4.8-5.06,8.73-11.25,8.73h-37.5c-6.19,0-11.25-3.93-11.25-8.73V113.23c0-4.8,5.06-8.73,11.25-8.73h37.5c6.19,0,11.25,3.93,11.25,8.73Zm160,0c0,4.8-5.06,8.73-11.25,8.73h-37.5c-6.19,0-11.25-3.93-11.25-8.73V113.23c0-4.8,5.06-8.73,11.25-8.73h37.5c6.19,0,11.25,3.93,11.25,8.73Z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="timer-box">
+                        <p class="timer-display">00:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
